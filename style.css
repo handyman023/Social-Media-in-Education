@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust for fixed nav */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Full-screen Section Layout */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Content Wrapper */
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Images Container */
+.images-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.images-container img {
+    max-width: 45%;
+    height: auto;
+    margin: 10px 0;
+}
+
+/* Responsive Image */
+img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Navigation Bar */
+.pageHeader {
+    background-color: #0288d1;
+    height: 60px;
+    width: 100%;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-items a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.nav-items a:hover {
+    background-color: #0277bd;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Home Section Layout */
+.home-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #0277bd; /* Darker blue for section titles */
+}
+
+/* Link Styling */
+.styled-link {
+    position: relative; /* To position the pseudo-element */
+    display: inline-block; /* Allow padding and hover effects */
+    color: #0288d1; /* Initial link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+    padding: 10px 15px; /* Add padding for better click area */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #e0f7fa; /* Light background */
+    transition: all 0.3s ease; /* Smooth transition */
+    margin-top: 10px; /* Add spacing between links */
+}
+
+/* Hover Effect */
+.styled-link:hover {
+    color: #ffffff; /* Change text color on hover */
+    background-color: #0288d1; /* Change background color */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Active State */
+.styled-link:active {
+    transform: scale(0.98); /* Slight scale effect when clicked */
+}
+
+/* Pseudo Element for Underline */
+.styled-link::after {
+    content: ''; /* Create a pseudo-element */
+    display: block; /* Make it a block element */
+    height: 2px; /* Height of the underline */
+    width: 0; /* Initial width */
+    background: #ffeb3b; /* Color of the underline */
+    transition: width 0.3s ease; /* Smooth width transition */
+    position: absolute; /* Position it relative to the link */
+    bottom: -5px; /* Position it below the text */
+    left: 50%; /* Center it */
+}
+
+/* Underline Effect on Hover */
+.styled-link:hover::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Align to the left */
+}
+
+/* Additional Style for Specific Links */
+.styled-link:hover {
+    font-size: 1.1rem; /* Slightly increase font size on hover */
+}
+
+/* Footer Styling */
+.pageFooter {
+    background-color: #0288d1;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Adjust titles on smaller screens */
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+        margin-top: 80px; /* Reduce space for mobile screens */
+    }
+
+    .images-container img {
+        max-width: 100%;
+    }
+
+    .nav-items {
+        margin-left: 10px;
+    }
+}
